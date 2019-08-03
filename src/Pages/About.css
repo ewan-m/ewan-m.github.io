@@ -1,0 +1,24 @@
+.social-icon-container {
+    border-radius: 1rem;
+    width: 2rem;
+    padding-top: 0.1rem;
+    height: 2rem;
+    text-align: center;
+    background-color: #282c34;
+    cursor: pointer;
+}
+
+.social-icon-container:hover>.social-icon {
+    color: #61dafb;
+}
+
+.social-icon {
+    color: #ccc;
+}
+
+.about-panel {
+    max-width: 30rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
