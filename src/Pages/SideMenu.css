@@ -1,0 +1,36 @@
+.Container {
+    min-width: 200px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #282c34;
+    color: #eee;
+    border-radius: 0 1rem 0 0;
+}
+
+.Title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.Title>.FirstWord {
+    color: #eee;
+    font-weight: 700;
+}
+
+.Title>.SecondWord {
+    color: #fff;
+    font-weight: 300;
+}
+
+.DividingLabel {
+    text-align: center; 
+    border-bottom: 1px solid #bbb; 
+    line-height: 0.1rem;
+    margin: 2.5rem 0 1rem;
+    color: #bbb;
+}
+
+.DividingLabel>span {
+    background: #282c34;
+    padding: 0 0.5rem;
+}
