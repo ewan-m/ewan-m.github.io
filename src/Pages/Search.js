@@ -2,6 +2,7 @@ import React from 'react';
 import './Search.css';
 import ArticleCard from '../UiElements/ArticleCard';
 import SearchBox from '../UiElements/SearchBox';
+import Paginator from '../UiElements/Paginator';
 
 export default class Search extends React.PureComponent {
     timeout = null;
@@ -56,18 +57,21 @@ export default class Search extends React.PureComponent {
     render() {
         return (
             <div>
-                <div className="d-flex flex-row mb-3">
+                <div className="mb-3">
                     <SearchBox parent={this} />
                 </div>
-                <div className="row d-flex align-content-stretch flex-wrap">
+                <div className="d-flex flex-row justify-content-center flex-wrap">
                     {this.state.articles
                         ? this.state.articles.map((article, index) =>
-                            <div key={index} className="h-100 col-lg-6 mb-3">
-                                <ArticleCard id={index} article={article} />
-                            </div>
-                        ) : <div className="col-lg-12">
-                            Nothing to see here governor!
+                            <ArticleCard id={index} article={article} />
+                        ) : <div className="text-center">
+                            <h2>
+                                Nothing to see here governor!
+                            </h2>
                         </div>}
+                </div>
+                <div >
+                    <Paginator />
                 </div>
             </div>
         );
