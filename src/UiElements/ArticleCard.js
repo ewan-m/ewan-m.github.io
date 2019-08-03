@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './ArticleCard.css';
-import { FaChevronUp } from 'react-icons/fa';
-import Collapse from 'react-bootstrap/Collapse';
+import { FaChevronRight } from 'react-icons/fa';
 
 function ArticleCard(props) {
     const [open, setOpen] = useState(false);
@@ -23,38 +22,35 @@ function ArticleCard(props) {
     }
 
     return (
-        <div className="card shadow-sm h-100">
-            <div className="card-header">
-                <h5 className="card-title">
-                    <a href="#collapse" className="d-flex justify-content-between" onClick={() => setOpen(!open)}>
+        <div className="m-2 shadow-sm">
+            <div className="d-flex flex-row">
+                <div className="a4-paper-dimensions p-2 flex-shrink-0 d-flex flex-column justify-content-between" onClick={() => setOpen(!open)}>
+                    <h2 className="h6 text-center">
                         {title}
-                        <span className="ml-3">
-                            <FaChevronUp />
+                    </h2>
+                    <div className="expand-icon-container d-flex flex-row flex-row-reverse">
+                        <span className={open ? "hover-icon rotated" : "hover-icon"}>
+                            <FaChevronRight />
                         </span>
-                    </a>
-                </h5>
-            </div>
-            <Collapse in={open}>
-                <div>
-                    <div className="card-body">
-                        <p className="card-text">
-                            {summary}
-                        </p>
-                        <p >
-                            {journal}
-                        </p>
                     </div>
-                </div>
-            </Collapse>
-            <div className="card-footer text-muted">
-                <div className="d-flex flex-row justify-content-between">
-                    <span className="text-truncate" style={{ maxWidth: '50%' }}>
+                    <p className="text-truncate text-center w-100">
                         {author}
-                    </span>
-                    <span>
-                        {published}
-                    </span>
+                    </p>
                 </div>
+                {open && <div className="a4-paper-height p-2">
+                    <label className="d-flex flex-row justify-content-between">
+                        <span className="font-weight-bold">
+                            {journal}
+                        </span>
+                        <span className="text-muted">
+                            {published}
+                        </span>
+                    </label>
+                    <hr></hr>
+                    <p>
+                        {summary}
+                    </p>
+                </div>}
             </div>
         </div>
     );

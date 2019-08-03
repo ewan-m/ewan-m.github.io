@@ -4,3 +4,40 @@
 .card-header .collapsed .fa {
     transform: rotate(90deg);
 }
+
+.a4-paper-dimensions {
+    width:  12.4rem;
+    height: 17.5rem;
+    background-color: #fffdf0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.hover-icon {
+    opacity: 0;
+    color: #036b87;
+    transition: all 0.3s ease;
+}
+
+.a4-paper-dimensions:hover .hover-icon {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.hover-icon.rotated {
+    transition: all 0.3s ease;
+    transform: rotate(-180deg);
+}
+
+.a4-paper-height {
+    height: 17.5rem;
+    width: 12.4rem;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+@media (min-width: 992px) { 
+    .a4-paper-height {
+        width: 24.8rem;
+    }
+}
