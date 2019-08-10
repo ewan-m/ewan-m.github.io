@@ -1,4 +1,4 @@
-export const MockApiResponse = `<?xml version="1.0" encoding="UTF-8"?>
+export const MockApiResponse: string = `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <link href="http://arxiv.org/api/query?search_query%3Dall%3Ascience%26id_list%3D%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
   <title type="html">ArXiv Query: search_query=all:science&amp;id_list=&amp;start=0&amp;max_results=10</title>
@@ -101,7 +101,7 @@ study of complex quantum systems.
     <updated>2008-08-05T12:22:38Z</updated>
     <published>2008-08-05T12:22:38Z</published>
     <title>Comment: The 2005 Neyman Lecture: Dynamic Indeterminism in Science</title>
-    <summary>  Comment on ``The 2005 Neyman Lecture: Dynamic Indeterminism in Science''
+    <summary>  Comment on ''The 2005 Neyman Lecture: Dynamic Indeterminism in Science''
 [arXiv:0808.0620]
 </summary>
     <author>
@@ -123,7 +123,7 @@ study of complex quantum systems.
     <updated>2008-08-05T12:37:52Z</updated>
     <published>2008-08-05T12:37:52Z</published>
     <title>Comment: The 2005 Neyman Lecture: Dynamic Indeterminism in Science</title>
-    <summary>  Comment on ``The 2005 Neyman Lecture: Dynamic Indeterminism in Science''
+    <summary>  Comment on 'The 2005 Neyman Lecture: Dynamic Indeterminism in Science''
 [arXiv:0808.0620]
 </summary>
     <author>
@@ -145,7 +145,7 @@ study of complex quantum systems.
     <updated>2008-08-05T12:47:23Z</updated>
     <published>2008-08-05T12:47:23Z</published>
     <title>Rejoinder: The 2005 Neyman Lecture: Dynamic Indeterminism in Science</title>
-    <summary>  Rejoinder to ``The 2005 Neyman Lecture: Dynamic Indeterminism in Science''
+    <summary>  Rejoinder to ''The 2005 Neyman Lecture: Dynamic Indeterminism in Science''
 [arXiv:0808.0620]
 </summary>
     <author>
