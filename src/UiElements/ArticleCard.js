@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ArticleCard.css';
-import { FaChevronRight } from 'react-icons/fa';
+import { FaChevronCircleDown } from 'react-icons/fa';
+import physics from '../Assets/physics.jpg';
 
 function ArticleCard(props) {
     const [open, setOpen] = useState(false);
@@ -22,35 +23,33 @@ function ArticleCard(props) {
     }
 
     return (
-        <div className="m-2 shadow-sm">
-            <div className="d-flex flex-row">
-                <div className="a4-paper-dimensions p-2 flex-shrink-0 d-flex flex-column justify-content-between" onClick={() => setOpen(!open)}>
-                    <h2 className="h6 text-center">
-                        {title}
-                    </h2>
-                    <div className="expand-icon-container d-flex flex-row flex-row-reverse">
-                        <span className={open ? "hover-icon rotated" : "hover-icon"}>
-                            <FaChevronRight />
-                        </span>
-                    </div>
-                    <p className="text-truncate text-center w-100">
-                        {author}
-                    </p>
-                </div>
-                {open && <div className="a4-paper-height p-2">
-                    <label className="d-flex flex-row justify-content-between">
-                        <span className="font-weight-bold">
-                            {journal}
-                        </span>
-                        <span className="text-muted">
-                            {published}
-                        </span>
-                    </label>
-                    <hr></hr>
+        <div className="shadow-sm a4-paper-dimensions h-100">
+            <img src={physics} width="100%" />
+            <div className="text-center p-2 d-flex flex-column justify-content-between">
+                <label className="text-muted text-uppercase w-100 text-truncate">
+                    {author}
+                </label>
+                <h2 className="h6">
+                    {title}
+                </h2>
+                {open && <div className="text-left">
                     <p>
                         {summary}
                     </p>
-                </div>}
+                    <div className="d-flex flex-row justify-content-between">
+                        <label className="font-italic">
+                            {journal}
+                        </label>
+                        <label className="text-muted">
+                            {published}
+                        </label>
+                    </div>
+                </div>
+                }
+                <div className="w-100 d-flex justify-content-center" onClick={() => setOpen(!open)}>
+                    <FaChevronCircleDown className="text-muted" />
+                </div>
+
             </div>
         </div>
     );

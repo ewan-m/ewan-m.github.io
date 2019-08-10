@@ -63,14 +63,18 @@ export default class Search extends React.PureComponent {
                 <div className="d-flex flex-row justify-content-center flex-wrap">
                     {this.state.articles
                         ? this.state.articles.map((article, index) =>
-                            <ArticleCard id={index} article={article} />
+                            <div className="col-lg-3">
+                                <div className="m-2">
+                                    <ArticleCard id={index} article={article} />
+                                </div>
+                            </div>
                         ) : <div className="text-center">
                             <h2>
                                 Nothing to see here governor!
                             </h2>
                         </div>}
                 </div>
-                <div >
+                <div>
                     <Paginator />
                 </div>
             </div>
