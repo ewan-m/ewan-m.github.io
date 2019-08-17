@@ -1,16 +1,95 @@
 import { ParsedResponse } from './types/ParsedResponse';
-
+import { Article } from './types/Article';
 
 export function ParseArxivXml(rawXmlResponse: string): ParsedResponse {
+    const articlesPerPage = Number(getValue(rawXmlResponse, 'itemsPerPage'));
     return {
-        articlesPerPage: Number(getValue(rawXmlResponse, 'itemsPerPage')),
+        articlesPerPage,
         currentPage: Number(getValue(rawXmlResponse, 'startIndex')),
-        totalArticles: Number(getValue(rawXmlResponse, 'totalResults'))
+        totalArticles: Number(getValue(rawXmlResponse, 'totalResults')),
+        articles: getArticles(rawXmlResponse, articlesPerPage)
     };
 }
 
-function getValue(rawXml: string, xmlPropertyName: string) {
-    const xmlProperty = rawXml.split(xmlPropertyName)[1];
+function getArticles(rawXml: string, articlesToParse: number): Array<Article> {
+    const articles: Array<Article> = [];
+    let articleStartIndex = rawXml.indexOf('<entry>');
+    let xmlLeftToParse = rawXml.substring(articleStartIndex);
 
-    return xmlProperty.slice(xmlProperty.indexOf('>') + 1, xmlProperty.indexOf('<'));
+    while (articlesToParse > 0) {
+        const articleEndIndex = xmlLeftToParse.indexOf('</entry>');
+        const articleXml = xmlLeftToParse.substring(0, articleEndIndex);
+
+        articles.push(removeFieldsWhichEqual({
+            published: getValue(articleXml, 'published'),
+            authors: getAllTagValues(articleXml, 'author', 'name', getValue),
+            title: getValue(articleXml, 'title'),
+            summary: getValue(articleXml, 'summary'),
+            primaryCategory: getAttributeValue(getXmlElement(articleXml, 'arxiv:primary_category'), 'term'),
+            secondaryCategories: getAllTagValues(articleXml, 'category', 'term', getAttributeValue),
+            doi: getValue(articleXml, 'arxiv:doi'),
+            pdfHref: getAttributeValueWithAttributeMatcher(articleXml, 'link', 'href', 'title', 'pdf'),
+            journal: getValue(articleXml, 'arxiv:journal_ref')
+        }, ''));
+
+        xmlLeftToParse = xmlLeftToParse.substring(articleEndIndex + '</entry>'.length);
+        articlesToParse--;
+    }
+
+    return articles;
+}
+
+function removeFieldsWhichEqual(object: any, value: any): any {
+    Object.keys(object).forEach(key => object[key] === value && delete object[key]);
+    return object;
+}
+
+function getValue(articleXml: string, tagName: string): string {
+    try {
+        const xmlElement = articleXml.split(tagName)[1];
+        return xmlElement.slice(xmlElement.indexOf('>') + 1, xmlElement.indexOf('<'));
+    } catch (error) {
+        return '';
+    }
+}
+
+function getXmlElement(articleXml: string, tagName: string) {
+    try {
+        return articleXml.split(tagName)[1];
+    } catch (error) {
+        return '';
+    }
+}
+
+function getAttributeValue(xmlElement: string, attributeName: string): string {
+    try {
+        const attributeValueStart = xmlElement.substring(xmlElement.indexOf(attributeName) + attributeName.length + 2);
+        return attributeValueStart.substring(0, attributeValueStart.indexOf('\"'));
+    } catch (error) {
+        return '';
+    }
+}
+
+function getAttributeValueWithAttributeMatcher(
+    articleXml: string,
+    tagName: string,
+    desiredAttrName: string,
+    matcherAttrName: string,
+    matcherAttrValue: string
+): string {
+    return articleXml.split(`<${tagName}`)
+        .slice(1)
+        .map(linkText => {
+            return {
+                attrName: getAttributeValue(linkText, matcherAttrName),
+                attrValue: getAttributeValue(linkText, desiredAttrName)
+            };
+        })
+        .filter(link => link.attrName === matcherAttrValue)[0].attrValue;
+}
+
+function getAllTagValues(articleXml: string, tagName: string, matcherName: string, extractorFunction: Function): Array<string> {
+    return articleXml.split(`<${tagName}`)
+        .slice(1)
+        .map(elementText => extractorFunction(elementText, matcherName));
 }

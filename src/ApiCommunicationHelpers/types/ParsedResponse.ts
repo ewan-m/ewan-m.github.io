@@ -4,5 +4,5 @@ export interface ParsedResponse {
     currentPage: number;
     articlesPerPage: number;
     totalArticles: number;
-    articles?: Array<Article>;
+    articles: Array<Article>;
 }
