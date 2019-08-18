@@ -1,1 +1,49 @@
+.grayscale-image {
+    filter: grayscale(100%);
+}
 
+.colour-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;                        
+    transform: translate(-50%, -50%);
+}
+
+.colour-overlay > .category-label {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.ph {
+    background-color: rgba(97, 218, 251, 0.5);
+}
+.physics {
+    background-color: rgba(97, 218, 251, 0.5);
+}
+.bio {
+    background-color: rgba(251, 144, 97, 0.5);
+}
+.cs {
+    background-color: rgba(190, 97, 251, 0.5);
+}
+.econ {
+    background-color: rgba(251, 220, 97, 0.5);
+}
+.eess {
+    background-color: rgba(190, 97, 251, 0.5);
+}
+.fin {
+    background-color: rgba(251, 220, 97, 0.5);
+}
+.math {
+    background-color: rgba(97, 218, 251, 0.5);
+}
+.stat {
+    background-color: rgba(251, 144, 97, 0.5);
+}

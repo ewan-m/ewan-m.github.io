@@ -1,7 +1,7 @@
-import { ParsedResponse } from './types/ParsedResponse';
-import { Article } from './types/Article';
+import { ParsedResponse } from './models/ParsedResponse';
+import { Article } from './models/Article';
 
-export function ParseArxivXml(rawXmlResponse: string): ParsedResponse {
+export function parseArxivXml(rawXmlResponse: string): ParsedResponse {
     const articlesPerPage = Number(getValue(rawXmlResponse, 'itemsPerPage'));
     return {
         articlesPerPage,
@@ -64,7 +64,7 @@ function getXmlElement(articleXml: string, tagName: string) {
 function getAttributeValue(xmlElement: string, attributeName: string): string {
     try {
         const attributeValueStart = xmlElement.substring(xmlElement.indexOf(attributeName) + attributeName.length + 2);
-        return attributeValueStart.substring(0, attributeValueStart.indexOf('\"'));
+        return attributeValueStart.substring(0, attributeValueStart.indexOf('"'));
     } catch (error) {
         return '';
     }
@@ -77,15 +77,19 @@ function getAttributeValueWithAttributeMatcher(
     matcherAttrName: string,
     matcherAttrValue: string
 ): string {
-    return articleXml.split(`<${tagName}`)
-        .slice(1)
-        .map(linkText => {
-            return {
-                attrName: getAttributeValue(linkText, matcherAttrName),
-                attrValue: getAttributeValue(linkText, desiredAttrName)
-            };
-        })
-        .filter(link => link.attrName === matcherAttrValue)[0].attrValue;
+    try {
+        return articleXml.split(`<${tagName}`)
+            .slice(1)
+            .map(linkText => {
+                return {
+                    attrName: getAttributeValue(linkText, matcherAttrName),
+                    attrValue: getAttributeValue(linkText, desiredAttrName)
+                };
+            })
+            .filter(link => link.attrName === matcherAttrValue)[0].attrValue;
+    } catch (error) {
+        return '';
+    }
 }
 
 function getAllTagValues(articleXml: string, tagName: string, matcherName: string, extractorFunction: Function): Array<string> {

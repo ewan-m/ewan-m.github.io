@@ -1,22 +1,22 @@
-import { ParseArxivXml } from './XmlParser';
+import { parseArxivXml } from './parseArxivXml';
 import { MockApiResponse } from './testing/MockApiResponse';
 
 describe('XmlParser - ParseArxivXml', () => {
     describe('parsing the search query info', () => {
         it('should parse the articles per page', () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.articlesPerPage).toBe(10);
         });
 
         it('should parse the currentPage', () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.currentPage).toBe(0);
         });
 
         it('should parse the totalArticles', () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.totalArticles).toBe(120839);
         });
@@ -24,20 +24,20 @@ describe('XmlParser - ParseArxivXml', () => {
 
     describe('parsing articles', () => {
         it('should define the articles field', () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.articles).toBeDefined();
         });
 
         it('should make the articles field an array with length greater than 0', () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.articles).toBeInstanceOf(Array);
             expect(result.articles.length).toBeGreaterThan(0);
         });
 
         it(`should parse the first article correctly`, () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.articles[0]).toEqual({
                 published: '2015-01-21T02:41:55Z',
@@ -57,7 +57,7 @@ present paper, data science is defined as the science of exploring datanature.
         });
 
         it('should parse all the published dates in the correct order', () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             const allPublishedDates = result.articles.map(article => article.published);
             const expectedPublishedDates = [
@@ -77,7 +77,7 @@ present paper, data science is defined as the science of exploring datanature.
         });
 
         it(`should parse the last article correctly`, () => {
-            const result = ParseArxivXml(MockApiResponse);
+            const result = parseArxivXml(MockApiResponse);
 
             expect(result.articles[result.articles.length - 1]).toEqual({
                 published: '2013-12-22T07:55:13Z',
