@@ -1,0 +1,7 @@
+.recent-search-pill {
+    background-color: rgb(251, 144, 97);
+    padding: 0.25rem 0.75rem 0.35rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 1.5rem;
+}

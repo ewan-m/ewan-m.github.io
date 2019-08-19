@@ -27,7 +27,8 @@ export function ArticleCard(props: { id: number, article: Article }) {
         'eess': electricalengineering,
         'fin': finance,
         'math': mathematics,
-        'stat': statistics
+        'stat': statistics,
+        'gr-qc': physics
     };
 
     Object.keys(categoryToImageMapping).forEach(key => {
@@ -40,7 +41,7 @@ export function ArticleCard(props: { id: number, article: Article }) {
     return (
         <div className="shadow h-100 d-flex flex-column justify-content-between">
             <div className="w-100 position-relative">
-                <img alt="category" className="grayscale-image" src={articleImage} width="100%" />
+                <img alt="category" className="grayscale-image" src={articleImage} width="50%" />
                 <div className={"d-flex flex-column align-items-center justify-content-center colour-overlay " + colourOverlayClass}>
                     <label className="category-label">
                         {props.article.primaryCategory}

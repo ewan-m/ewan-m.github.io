@@ -10,7 +10,7 @@ import { TopMenuItem } from '../UiElements/TopMenuItem';
 
 export function TopMenu() {
     return (
-        <header className="SiteHeader d-flex flex-row justify-content-between p-3">
+        <header className="SiteHeader d-flex flex-row justify-content-between py-3 px-3 px-md-5">
             <h1 className="Title">
                 <span className="FirstWord">
                     arX
