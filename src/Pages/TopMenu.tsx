@@ -21,7 +21,7 @@ export function TopMenu() {
             </h1>
             <div className="d-flex flex-row align-items-center">
                 <TopMenuItem name="search" icon={FaSearch} />
-                <TopMenuItem name="liked articles" icon={FaHeart} />
+                <TopMenuItem name="favourites" icon={FaHeart} />
                 <TopMenuItem name="about" icon={FaInfoCircle} />
             </div>
             <div className="d-flex align-items-center">

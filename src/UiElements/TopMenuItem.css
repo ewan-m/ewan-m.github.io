@@ -4,7 +4,6 @@
     transition: 0.2s;
     user-select: none;
     cursor: pointer;
-    margin-right: 2rem;
 }
 
 .MenuItem > svg {
@@ -19,4 +18,8 @@
 
 .MenuItem.Selected {
     color: #61dafb;
+}
+
+.MenuItem.Selected > .LinkName {
+    display: inline !important;
 }
