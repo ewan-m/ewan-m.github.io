@@ -1,0 +1,22 @@
+.MenuItem {
+    display: block;
+    color: #ccc;
+    transition: 0.2s;
+    user-select: none;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+.MenuItem > svg {
+    margin-bottom: 0.2em;
+    margin-right: 0.5rem;
+}
+
+.MenuItem:hover {
+    color: rgb(164, 230, 247);
+    text-decoration: none;
+}
+
+.MenuItem.Selected {
+    color: #61dafb;
+}

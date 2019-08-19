@@ -8,7 +8,7 @@ function About() {
         <div className="d-flex justify-content-center">
             <div className="about-panel p-3 shadow">
                 <h1>
-                    hello
+                    what is all this then?
                 </h1>
                 <p>
                     this page was made because i wanted to learn react - a frontend web framework. in the process i realized that maybe i had a thing some people might find useful so i decided to publish it.

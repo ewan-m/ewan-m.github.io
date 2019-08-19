@@ -2,7 +2,6 @@ import React from 'react';
 import './Search.css';
 import { ArticleCard } from '../UiElements/ArticleCard';
 import SearchBox from '../UiElements/SearchBox';
-import Paginator from '../UiElements/Paginator';
 import { parseArxivXml } from '../ApiCommunicationHelpers/parseArxivXml';
 import { Article } from '../ApiCommunicationHelpers/models/Article';
 
@@ -64,7 +63,7 @@ export default class Search extends React.PureComponent {
                 <div className="row">
                     {this.state.articles
                         ? this.state.articles.map((article, index: number) =>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="mb-5 col-lg-3 col-md-4 col-sm-6">
                                 <ArticleCard key={index} id={index} article={article} />
                             </div>
                         ) : <div className="text-center">
@@ -72,9 +71,6 @@ export default class Search extends React.PureComponent {
                                 Nothing to see here governor!
                             </h2>
                         </div>}
-                </div>
-                <div>
-                    <Paginator />
                 </div>
             </div>
         );

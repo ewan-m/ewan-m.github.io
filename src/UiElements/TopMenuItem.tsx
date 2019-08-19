@@ -1,8 +1,9 @@
 import React from 'react';
-// import './MenuItem.css';
-import { NavLink } from "react-router-dom";
+import './TopMenuItem.css';
+import { NavLink } from 'react-router-dom';
+import { IconType } from 'react-icons';
 
-function MenuItem(props) {
+export function TopMenuItem(props: {icon: IconType, name: string}) {
     const Icon = props.icon;
     const Destination = '/' + props.name.replace(' ', '');
 
@@ -13,6 +14,3 @@ function MenuItem(props) {
         </NavLink>
     );
 }
-
-export default MenuItem;
-
