@@ -39,7 +39,7 @@ export function ArticleCard(props: { id: number, article: Article }) {
     });
 
     return (
-        <div className="shadow h-100 d-flex flex-column justify-content-between">
+        <div className="shadow h-100 border-radius-bottom d-flex flex-column justify-content-between">
             <div className="w-100 position-relative">
                 <img alt="category" className="grayscale-image" src={articleImage} width="50%" />
                 <div className={"d-flex flex-column align-items-center justify-content-center colour-overlay " + colourOverlayClass}>
@@ -56,7 +56,7 @@ export function ArticleCard(props: { id: number, article: Article }) {
                     {props.article.title}
                 </h2>
             </div>
-            <div className={"p-3 px-5 d-flex flex-row justify-content-between white-icons " + colourOverlayClass}>
+            <div className={"p-3 border-radius-bottom px-5 d-flex flex-row justify-content-between white-icons " + colourOverlayClass}>
                 <FaHeart />
                 <FaAlignJustify />
                 <a style={{ marginTop: "-5px" }} href={props.article.pdfHref}>
