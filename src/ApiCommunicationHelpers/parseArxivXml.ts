@@ -3,11 +3,12 @@ import { Article } from './models/Article';
 
 export function parseArxivXml(rawXmlResponse: string): ParsedResponse {
     const articlesPerPage = Number(getValue(rawXmlResponse, 'itemsPerPage'));
+    const currentPage = Number(getValue(rawXmlResponse, 'startIndex'));
+    const totalArticles = Number(getValue(rawXmlResponse, 'totalResults'));
+    const articles = totalArticles > 0 ? getArticles(rawXmlResponse, articlesPerPage) : null;
+
     return {
-        articlesPerPage,
-        currentPage: Number(getValue(rawXmlResponse, 'startIndex')),
-        totalArticles: Number(getValue(rawXmlResponse, 'totalResults')),
-        articles: getArticles(rawXmlResponse, articlesPerPage)
+        articlesPerPage, currentPage, totalArticles, articles
     };
 }
 
