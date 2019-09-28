@@ -1,0 +1,41 @@
+.dna-helix {
+    transform-style: preserve-3d;
+}
+
+.node {
+    width: 1px;
+    height: 5rem;
+    float: left;
+    margin: 0 0.5rem;
+    border-left: 1px dashed #ccc;
+    position: relative;
+    transform: rotateX(-360deg);
+    animation: run 2s linear infinite;
+    animation-delay: calc(var(--animation-order) * -100ms)
+}
+
+.node:before {
+    top: -2px;
+    background: rgba(97, 218, 251, 0.5);
+}
+
+.node:after {
+    background: rgba(190, 97, 251, 0.5);
+    bottom: -2px;
+}
+
+.node:before, .node:after {
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes run {
+    to {
+        transform: none;
+    }
+}
