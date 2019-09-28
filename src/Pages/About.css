@@ -4,21 +4,21 @@
     padding-top: 0.1rem;
     height: 2rem;
     text-align: center;
-    background-color: #282c34;
+    background-color: var(--gray-darkest);
     cursor: pointer;
 }
 
 .social-icon-container:hover>.social-icon {
-    color: #61dafb;
+    color: rgb(var(--primary-light));
 }
 
 .social-icon {
-    color: #ccc;
+    color: var(--gray-lightest);
 }
 
 .about-panel {
     max-width: 30rem;
     border-radius: 1rem;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    border: 1px solid var(--gray-lightest);
+    background-color: var(--white);
 }

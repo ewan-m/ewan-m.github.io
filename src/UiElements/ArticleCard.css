@@ -16,16 +16,16 @@
 }
 
 .colour-overlay > .category-label {
-    background-color: #fff;
+    background-color: var(--white);
     padding: 1rem;
     border-radius: 0.5rem;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #282c34;
+    color: var(--gray-darkest);
 }
 
 .icons svg {
-    color: #282c34;
+    color: var(--gray-darkest);
     cursor: pointer;
 }
 
@@ -34,14 +34,11 @@
 }
 
 .ph, .gr-qc, .physics, .math {
-    background-color: rgba(97, 218, 251, 0.5);
+    background-color: rgba(var(--primary), 0.5);
 }
-.bio, .stat {
-    background-color: rgba(251, 144, 97, 0.5);
+.bio, .stat, .econ, .fin {
+    background-color: rgba(var(--secondary), 0.5);
 }
 .cs, .eess {
-    background-color: rgba(190, 97, 251, 0.5);
-}
-.econ, .fin {
-    background-color: rgba(251, 220, 97, 0.5);
+    background-color: rgba(var(--tertiary), 0.5);
 }

@@ -1,8 +1,8 @@
 .recent-search-pill {
-    background-color: rgb(251, 144, 97);
+    background-color: rgb(var(--secondary));
     padding: 0.25rem 0.75rem 0.35rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--white);
     border-radius: 1.5rem;
     white-space: nowrap;
 }

@@ -1,3 +1,15 @@
+:root {
+    --primary: 4, 147, 186;
+    --primary-active: 3, 107, 135;
+    --primary-light: 97, 218, 251;
+    --secondary: 251, 144, 97;
+    --tertiary: 190, 97, 251;
+    --white: #fff;
+    --gray-lightest: #eee;
+    --gray-light: #ccc;
+    --gray-darkest: #282c34;
+}
+
 .app {
     height: 100vh;
 }
@@ -12,11 +24,11 @@ h1 {
 }
 
 a {
-    color: #0493ba;
+    color: rgb(var(--primary));
 }
 
 a:hover {
-    color: #036b87;
+    color: rgb(var(--primary-active));
 }
 
 .btn {
@@ -31,26 +43,26 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: #0493ba;
-    color: #eee;
+    background-color: rgb(var(--primary));
+    color: var(--gray-lightest);
 }
 
 .btn-primary:hover {
-    background-color: #036b87;
+    background-color: rgb(var(--primary-active));
 }
 
 .btn-primary:focus {
-    background-color: #036b87;
-    box-shadow: 0 0 0 0.2rem rgba(97, 218, 251, 0.5);
+    background-color: rgb(var(--primary-active));
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-light), 0.5);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
-    background-color: #036b87;
+    background-color: rgb(var(--primary-active));
 }
 
 .form-control:focus {
-    border-color: #0493ba;
-    box-shadow: 0 0 0 0.2rem rgba(3, 107, 135, 0.25);
+    border-color: rgb(var(--primary));
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-active), 0.25);
 }
 
 .animate-in {

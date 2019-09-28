@@ -11,15 +11,15 @@
 }
 
 .title>.first-word {
-    color: #eee;
+    color: var(--gray-lightest);
     font-weight: 700;
 }
 
 .title>.second-word {
-    color: #fff;
+    color: var(--white);
     font-weight: 300;
 }
 
 .SiteHeader {
-    background-color: #282c34;
+    background-color: var(--gray-darkest);
 }
