@@ -37,6 +37,10 @@ export default class Search extends React.PureComponent {
 
     getArticlesMatching(searchValue: string) {
         this.state.recentSearches.unshift(searchValue);
+        this.setState({
+            isLoaded: false,
+            articles: []
+        });
         fetch("https://export.arxiv.org/api/query?search_query=all:" + searchValue)
             .then(res => res.text())
             .then(

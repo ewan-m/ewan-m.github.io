@@ -1,45 +1,26 @@
 import React from 'react';
 import './ArticleCard.css';
 import { FaHeart, FaExternalLinkAlt, FaAlignJustify } from 'react-icons/fa';
-import biology from '../Assets/categories/biology.jpg';
-import computerscience from '../Assets/categories/computerscience.jpg';
-import economics from '../Assets/categories/economics.jpg';
-import electricalengineering from '../Assets/categories/electricalengineering.jpg';
-import finance from '../Assets/categories/finance.jpg';
-import mathematics from '../Assets/categories/mathematics.jpg';
-import physics from '../Assets/categories/physics.jpg';
-import statistics from '../Assets/categories/statistics.jpg';
 import { Article } from '../ApiCommunicationHelpers/models/Article';
+import { categoryToImageMapping } from './CategoryToImageMapping';
 
 export function ArticleCard(props: { id: number, article: Article }) {
     let colourOverlayClass = '';
     let articleImage = '';
+    const style = { "--animation-order": props.id } as React.CSSProperties;
 
     const authors: string = props.article.authors.join(', ');
 
-    const categoryToImageMapping: { [key: string]: string }
-        = {
-        'physics': physics,
-        'ph': physics,
-        'bio': biology,
-        'cs': computerscience,
-        'econ': economics,
-        'eess': electricalengineering,
-        'fin': finance,
-        'math': mathematics,
-        'stat': statistics,
-        'gr-qc': physics
-    };
-
     Object.keys(categoryToImageMapping).forEach(key => {
-        if (props.article.primaryCategory.includes(key) && articleImage === '') {
+        const isImageNeeded = articleImage === '' && props.article.primaryCategory && props.article.primaryCategory.includes(key);
+        if (isImageNeeded) {
             articleImage = categoryToImageMapping[key];
             colourOverlayClass = key;
         }
     });
 
     return (
-        <div className="shadow h-100 border-radius-bottom d-flex flex-column justify-content-between">
+        <div className="shadow animate-in h-100 border-radius-bottom d-flex flex-column justify-content-between" style={style}>
             <div className="w-100 position-relative">
                 <img alt="category" className="grayscale-image" src={articleImage} width="50%" />
                 <div className={"d-flex flex-column align-items-center justify-content-center colour-overlay " + colourOverlayClass}>
