@@ -5,7 +5,7 @@ export function parseArxivXml(rawXmlResponse: string): ParsedResponse {
     const articlesPerPage = Number(getValue(rawXmlResponse, 'itemsPerPage'));
     const currentPage = Number(getValue(rawXmlResponse, 'startIndex'));
     const totalArticles = Number(getValue(rawXmlResponse, 'totalResults'));
-    const articles = totalArticles > 0 ? getArticles(rawXmlResponse, articlesPerPage) : null;
+    const articles = totalArticles > 0 ? getArticles(rawXmlResponse, Math.min(totalArticles, articlesPerPage)) : null;
 
     return {
         articlesPerPage, currentPage, totalArticles, articles
