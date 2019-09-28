@@ -1,6 +1,13 @@
 .Title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .Title {
+        font-size: 6vw;
+    }
 }
 
 .Title>.FirstWord {
@@ -15,18 +22,4 @@
 
 .SiteHeader {
     background-color: #282c34;
-}
-
-.SignUp {
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    font-weight: 600;
-    border: none;
-    color: #282c34;
-    background-color: #61dafb;
-}
-
-.SignUp > svg {
-    margin-bottom: 0.2em;
-    margin-right: 0.5rem;
 }
