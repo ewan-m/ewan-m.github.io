@@ -10,7 +10,7 @@ export function TopMenuItem(props: { icon: IconType, name: string }) {
     return (
         <NavLink to={Destination} className="mr-2 mr-sm-4 mr-md-5 MenuItem" activeClassName="Selected">
             <Icon />
-            <span className="LinkName d-none d-sm-inline d-md-inline">
+            <span className="LinkName">
                 {props.name}
             </span>
         </NavLink>

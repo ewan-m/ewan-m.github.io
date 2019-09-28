@@ -20,6 +20,13 @@
     color: #61dafb;
 }
 
+.MenuItem > .LinkName {
+    transition: 0.5s;
+    max-width: 0ch;
+    overflow: hidden;
+    display: inline-flex;
+}
+
 .MenuItem.Selected > .LinkName {
-    display: inline !important;
+    max-width: 80ch;
 }
