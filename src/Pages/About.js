@@ -20,7 +20,7 @@ function About() {
                     check out my github for the source code n feel free to send me a pull request if you wanna add some features!
                 </p>
                 <p>
-                    check out my instagram for some nice pics of sunsets, linkedin for professional purposes, and twitter for poorly conceived jokes.
+                    check out my instagram for some nice pics of sunsets, linkedin for professional purposes, and twitter for general bullshit.
                 </p>
                 <h2 className="text-right">
                     -ewan morrison
