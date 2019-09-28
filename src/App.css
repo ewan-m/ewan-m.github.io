@@ -19,14 +19,19 @@ a:hover {
     color: #036b87;
 }
 
+.btn {
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+}
+
 .btn-primary {
     background-color: #0493ba;
+    color: #eee;
 }
 
 .btn-primary:hover {
-    color: #fff;
     background-color: #036b87;
-    border-color: #0493ba;
 }
 
 .btn-primary:focus {
