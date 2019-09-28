@@ -1,4 +1,4 @@
-.MenuItem {
+.menu-item {
     display: block;
     color: #ccc;
     transition: 0.2s;
@@ -6,27 +6,27 @@
     cursor: pointer;
 }
 
-.MenuItem > svg {
+.menu-item > svg {
     margin-bottom: 0.2em;
     margin-right: 0.5rem;
 }
 
-.MenuItem:hover {
+.menu-item:hover {
     color: rgb(164, 230, 247);
     text-decoration: none;
 }
 
-.MenuItem.Selected {
+.menu-item.selected {
     color: #61dafb;
 }
 
-.MenuItem > .LinkName {
+.menu-item > .link-name {
     transition: 0.5s;
     max-width: 0ch;
     overflow: hidden;
     display: inline-flex;
 }
 
-.MenuItem.Selected > .LinkName {
+.menu-item.selected > .link-name {
     max-width: 80ch;
 }

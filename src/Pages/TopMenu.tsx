@@ -11,11 +11,11 @@ import { TopMenuItem } from '../UiElements/TopMenuItem';
 export function TopMenu() {
     return (
         <header className="SiteHeader d-flex flex-row justify-content-between py-1 px-3 px-md-5">
-            <h1 className="Title">
-                <span className="FirstWord">
+            <h1 className="title">
+                <span className="first-word">
                     arX
                     </span>
-                <span className="SecondWord">
+                <span className="second-word">
                     plorer
                     </span>
             </h1>

@@ -1,8 +1,8 @@
-.App {
+.app {
     height: 100vh;
 }
 
-.PageContainer {
+.page-container {
     height: 100vh;
     overflow-y: auto;
 }
