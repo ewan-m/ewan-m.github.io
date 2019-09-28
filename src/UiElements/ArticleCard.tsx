@@ -1,8 +1,9 @@
 import React from 'react';
 import './ArticleCard.css';
 import { FaHeart, FaExternalLinkAlt, FaAlignJustify } from 'react-icons/fa';
-import { Article } from '../ApiCommunicationHelpers/models/Article';
+import { Article } from '../ApiCommunicationHelpers/interfaces/Article';
 import { categoryToImageMapping } from './CategoryToImageMapping';
+import generic from '../Assets/categories/generic.png';
 
 export function ArticleCard(props: { id: number, article: Article }) {
     let colourOverlayClass = '';
@@ -18,6 +19,11 @@ export function ArticleCard(props: { id: number, article: Article }) {
             colourOverlayClass = key;
         }
     });
+
+    if (articleImage === '') {
+        articleImage = generic;
+        colourOverlayClass = 'econ';
+    }
 
     return (
         <div className="shadow animate-in h-100 border-radius-bottom d-flex flex-column justify-content-between" style={style}>
@@ -37,10 +43,14 @@ export function ArticleCard(props: { id: number, article: Article }) {
                     {props.article.title}
                 </h2>
             </div>
-            <div className={"p-3 border-radius-bottom px-5 d-flex flex-row justify-content-between white-icons " + colourOverlayClass}>
-                <FaHeart />
-                <FaAlignJustify />
-                <a style={{ marginTop: "-5px" }} href={props.article.pdfHref}>
+            <div className={"border-radius-bottom px-3 d-flex flex-row justify-content-between icons " + colourOverlayClass}>
+                <button className="btn p-3">
+                    <FaHeart />
+                </button>
+                <button className="btn p-3">
+                    <FaAlignJustify />
+                </button>
+                <a className="btn p-3" href={props.article.pdfHref}>
                     <FaExternalLinkAlt />
                 </a>
             </div>

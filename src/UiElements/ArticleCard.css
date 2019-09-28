@@ -24,7 +24,7 @@
     color: #282c34;
 }
 
-.white-icons svg {
+.icons svg {
     color: #282c34;
     cursor: pointer;
 }
@@ -33,30 +33,15 @@
     border-radius: 0 0 2rem 2rem;
 }
 
-.ph {
+.ph, .gr-qc, .physics, .math {
     background-color: rgba(97, 218, 251, 0.5);
 }
-.physics {
-    background-color: rgba(97, 218, 251, 0.5);
-}
-.bio {
+.bio, .stat {
     background-color: rgba(251, 144, 97, 0.5);
 }
-.cs {
+.cs, .eess {
     background-color: rgba(190, 97, 251, 0.5);
 }
-.econ {
+.econ, .fin {
     background-color: rgba(251, 220, 97, 0.5);
-}
-.eess {
-    background-color: rgba(190, 97, 251, 0.5);
-}
-.fin {
-    background-color: rgba(251, 220, 97, 0.5);
-}
-.math {
-    background-color: rgba(97, 218, 251, 0.5);
-}
-.stat {
-    background-color: rgba(251, 144, 97, 0.5);
 }
