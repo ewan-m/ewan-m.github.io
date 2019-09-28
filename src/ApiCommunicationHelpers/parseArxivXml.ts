@@ -1,5 +1,5 @@
-import { ParsedResponse } from './models/ParsedResponse';
-import { Article } from './models/Article';
+import { ParsedResponse } from './interfaces/ParsedResponse';
+import { Article } from './interfaces/Article';
 
 export function parseArxivXml(rawXmlResponse: string): ParsedResponse {
     const articlesPerPage = Number(getValue(rawXmlResponse, 'itemsPerPage'));
