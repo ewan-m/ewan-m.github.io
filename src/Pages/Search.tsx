@@ -3,21 +3,21 @@ import './Search.css';
 import { ArticleCard } from '../UiElements/ArticleCard';
 import SearchBox from '../UiElements/SearchBox';
 import { parseArxivXml } from '../ApiCommunicationHelpers/parseArxivXml';
-import { Article } from '../ApiCommunicationHelpers/models/Article';
+import { Article } from '../ApiCommunicationHelpers/interfaces/Article';
 import { FaTimesCircle } from 'react-icons/fa';
+import { Loading } from '../UiElements/Loading';
 
 export default class Search extends React.PureComponent {
     timeout: NodeJS.Timeout | null;
-    state: { error: null, isLoaded: boolean, articles: Array<Article>, recentSearches: Array<string> };
+    state: { isLoaded: boolean, articles: Array<Article> | null, recentSearches: Array<string> };
 
     constructor(props: any) {
         super(props);
         this.timeout = null;
         this.state = {
-            error: null,
             isLoaded: false,
             recentSearches: [],
-            articles: []
+            articles: null
         };
     }
 
@@ -32,14 +32,14 @@ export default class Search extends React.PureComponent {
 
         this.timeout = setTimeout(() => {
             this.getArticlesMatching(value)
-        }, 300);
+        }, 1000);
     }
 
     getArticlesMatching(searchValue: string) {
         this.state.recentSearches.unshift(searchValue);
         this.setState({
             isLoaded: false,
-            articles: []
+            articles: null
         });
         fetch("https://export.arxiv.org/api/query?search_query=all:" + searchValue)
             .then(res => res.text())
@@ -54,10 +54,10 @@ export default class Search extends React.PureComponent {
                 (error) => {
                     this.setState({
                         isLoaded: true,
-                        error
+                        articles: null
                     });
                 }
-            )
+            );
     }
 
     render() {
@@ -65,8 +65,8 @@ export default class Search extends React.PureComponent {
             <div>
                 <div className="mb-3">
                     <SearchBox parent={this} />
-                    <div className="d-flex flex-row align-items-center mt-2">
-                        <label className="text-muted m-0">
+                    <div className="d-flex flex-row align-items-center mt-2 overflow-auto">
+                        <label className="text-muted m-0" style={{whiteSpace: 'nowrap'}}>
                             recent searches:
                         </label>
                         {this.state.recentSearches
@@ -78,18 +78,26 @@ export default class Search extends React.PureComponent {
                         }
                     </div>
                 </div>
-                <div className="row">
-                    {this.state.articles
-                        ? this.state.articles.map((article, index: number) =>
-                            <div className="mb-5 col-lg-3 col-md-4 col-6">
-                                <ArticleCard key={index} id={index} article={article} />
-                            </div>
-                        ) : <div className="text-center">
-                            <h2>
-                                Nothing to see here governor!
-                            </h2>
-                        </div>}
-                </div>
+                {this.state.articles !== null
+                    ?
+                    <div className="row">
+                        {
+                            this.state.articles.map((article, index: number) =>
+                                <div className="mb-5 col-lg-3 col-md-4 col-6">
+                                    <ArticleCard key={index} id={index} article={article} />
+                                </div>
+                            )
+                        }
+                    </div>
+                    :
+                    <div className="d-flex justify-content-center mt-5">
+                        {
+                            this.state.isLoaded
+                                ? <p>No results found</p>
+                                : <span className="animate-spin"><Loading /></span>
+                        }
+                    </div>
+                }
             </div>
         );
     }
