@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Search from './Pages/Search';
 import About from './Pages/About';
 
-function App() {
+export function App(): React.ReactElement {
     return (
         <Router>
             <div className="app d-flex flex-column">
@@ -18,5 +18,3 @@ function App() {
         </Router>
     );
 }
-
-export default App;

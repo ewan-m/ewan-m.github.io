@@ -53,7 +53,7 @@ export default class Search extends React.PureComponent {
                     <div className="row">
                         {
                             this.state.articles.map((article, index: number) =>
-                                <div className="mb-5 col-lg-3 col-md-4 col-12">
+                                <div className="mb-5 col-lg-3 col-md-4 col-sm-6 col-12">
                                     <ArticleCard key={index} id={index} article={article} />
                                 </div>
                             )
