@@ -10,7 +10,7 @@ import { TopMenuItem } from '../UiElements/TopMenuItem';
 
 export function TopMenu() {
     return (
-        <header className="SiteHeader d-flex flex-row justify-content-between py-1 px-3 px-md-5">
+        <header className="site-header d-flex flex-row justify-content-between py-1 px-3 px-md-5">
             <h1 className="title">
                 <span className="first-word">
                     arX
@@ -26,7 +26,7 @@ export function TopMenu() {
             </div>
             <div className="d-flex align-items-center">
                 <button className="btn btn-primary SignUp">
-                    <FaUser />account
+                    <FaUser /><span className="d-none d-sm-inline ml-1">account</span>
                 </button>
             </div>
         </header>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Search.css';
 import { ArticleCard } from '../UiElements/ArticleCard';
-import SearchBox from '../UiElements/SearchBox';
+import { SearchBox } from '../UiElements/SearchBox';
 import { parseArxivXml } from '../ApiCommunicationHelpers/parseArxivXml';
 import { Article } from '../ApiCommunicationHelpers/interfaces/Article';
 import { Loading } from '../UiElements/Loading';
@@ -47,13 +47,13 @@ export default class Search extends React.PureComponent {
     render() {
         return (
             <div>
-                <SearchBox parent={this} />
+                <SearchBox parent={this}/>
                 {this.state.articles !== null
                     ?
                     <div className="row">
                         {
                             this.state.articles.map((article, index: number) =>
-                                <div className="mb-5 col-lg-3 col-md-4 col-6">
+                                <div className="mb-5 col-lg-3 col-md-4 col-12">
                                     <ArticleCard key={index} id={index} article={article} />
                                 </div>
                             )

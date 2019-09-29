@@ -27,7 +27,7 @@ function About() {
                 </h2>
                 <hr></hr>
                 <div className="d-flex justify-content-center">
-                    <img alt="my face" src={Me} className="rounded-circle w-25 mb-2 shadow-sm"></img>
+                    <img alt="my face" src={Me} className="rounded-circle h-100 w-25 mb-2 shadow-sm"></img>
                 </div>
                 <div className="d-flex flex-row justify-content-center">
                     <a href="https://www.linkedin.com/in/ewan-morrison/" target="blank">
