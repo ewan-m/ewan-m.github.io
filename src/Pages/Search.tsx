@@ -5,6 +5,7 @@ import { SearchBox } from '../UiElements/SearchBox';
 import { parseArxivXml } from '../ApiCommunicationHelpers/parseArxivXml';
 import { Article } from '../ApiCommunicationHelpers/interfaces/Article';
 import { Loading } from '../UiElements/Loading';
+import { Pagination } from '../UiElements/Pagination';
 
 export default class Search extends React.PureComponent {
     timeout: NodeJS.Timeout | null;
@@ -68,6 +69,7 @@ export default class Search extends React.PureComponent {
                         }
                     </div>
                 }
+                <Pagination />
             </div>
         );
     }
