@@ -3,8 +3,9 @@ import './Loading.css';
 
 export function Loading() {
     const elements: Array<React.CSSProperties> = [];
+    const elementsToRender = Math.min(Math.round(window.innerWidth / 20), 20);
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < elementsToRender; i++) {
         elements.push({ "--animation-order": i } as React.CSSProperties);
     }
 
