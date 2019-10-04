@@ -1,9 +1,6 @@
 import React from 'react';
-import FormControl from 'react-bootstrap/FormControl';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import './SearchBox.css';
-import { FaSearch, FaTimesCircle } from 'react-icons/fa';
+import { FaTimesCircle } from 'react-icons/fa';
 
 interface Parent {
     parent: any;
@@ -47,9 +44,9 @@ export class SearchBox extends React.PureComponent<Parent> {
     render() {
         return (
             <div className="mb-3">
-                <InputGroup>
-                    <Form.Group className="mb-0 mr-2">
-                        <Form.Control as="select" default="all">
+                <form>
+                    <div className="mb-0 mr-2">
+                        <select>
                             <option value="all">All fields</option>
                             <option value="title">Title</option>
                             <option value="author">Author</option>
@@ -65,21 +62,14 @@ export class SearchBox extends React.PureComponent<Parent> {
                             <option value="author_id">arXiv author ID</option>
                             <option value="help">Help pages</option>
                             <option value="full_text">Full text</option>
-                        </Form.Control>
-                    </Form.Group>
-                    <FormControl
+                        </select>
+                    </div>
+                    <input
                         placeholder="Search"
                         aria-label="Search for articles"
                         onChange={(event: any) => this.onSearchKeyUp(event.target.value)}
                     />
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            <span role="img" aria-label="search icon">
-                                <FaSearch />
-                            </span>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-                </InputGroup>
+                </form>
                 <div className="d-flex flex-row align-items-center mt-2 overflow-auto">
                     <label className="text-muted m-0" style={{ whiteSpace: 'nowrap' }}>
                         recent searches:
