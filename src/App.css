@@ -7,8 +7,15 @@
     --white: #fff;
     --gray-lightest: #eee;
     --gray-light: #ccc;
-    --gray-darkest: #282c34;
-    --shadow-small: rgba(0, 0, 0, 0.1) -1px 2px 5px 2px;
+    --gray-darkest: #434f68;
+    --shadow-small: rgba(0, 0, 0, 0.1) -1px 1px 4px 2px;
+    --shadow-smallest: rgba(0, 0, 0, 0.1) -1px 1px 3px 1px;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+    margin: 0;
+    padding: 0;
+    color: var(--gray-darkest);
 }
 
 .app {
@@ -21,7 +28,7 @@
     height: 100vh;
     width: 100%;
     overflow-y: auto;
-    background: linear-gradient(180deg, rgba(var(--primary-light), 0.1), rgba(var(--primary-light), 0.5));
+    background: rgba(var(--primary-light), 0.1);
 }
 
 h1 {
@@ -39,7 +46,7 @@ a:hover {
 
 .btn {
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     border: none;
     padding: 0.6rem 0.7rem 0.5rem;
     cursor: pointer;

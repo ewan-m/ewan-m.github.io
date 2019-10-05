@@ -27,10 +27,11 @@
     align-items: baseline;
     padding: 0.25rem 2rem 0.75rem;
     user-select: none;
+    box-shadow: var(--shadow-small);
+    z-index: 1000;
 }
 
 .buttons-section {
     display: flex;
     flex-direction: row;
-    align-items: center;
 }

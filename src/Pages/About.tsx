@@ -6,9 +6,9 @@ import { FaLinkedin, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 export const About = () => {
     return (
         <div className="centered-flex">
-            <div className="about-panel p-3 shadow">
-                <h1 className="mb-3">
-                    what is all this then?
+            <div className="about-panel">
+                <h1>
+                    arXplorer
                 </h1>
                 <p>
                     this page was made because i wanted to learn react - a frontend web framework. in the process i realized that maybe i had a thing some people might find useful so i decided to publish it.
@@ -22,33 +22,40 @@ export const About = () => {
                 <p>
                     check out my instagram for some nice pics of sunsets, linkedin for professional purposes, and twitter for general bullshit.
                 </p>
-                <h2 className="text-right">
-                    -ewan morrison
+            </div>
+            <div className="about-panel">
+
+                <h2>
+                    Ewan Morrison
                 </h2>
+                <label className="slick-description">
+                    Software Engineer, Edinburgh UK
+                </label>
                 <div className="centered-flex">
                     <img alt="my face" src={Me} className="profile-image"></img>
-                </div>
-                <div className="centered-flex">
-                    <a href="https://www.linkedin.com/in/ewan-morrison/" target="blank">
-                        <div className="social-icon-container">
-                            <FaLinkedin className="social-icon" />
-                        </div>
-                    </a>
-                    <a href="https://www.twitter.com/ewanm5" target="blank">
-                        <div className="social-icon-container">
-                            <FaTwitter className="social-icon" />
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/ewanmorrison_" target="blank">
-                        <div className="social-icon-container">
-                            <FaInstagram className="social-icon" />
-                        </div>
-                    </a>
-                    <a href="https://www.github.com/ewan-m" target="blank">
-                        <div className="social-icon-container">
-                            <FaGithub className="social-icon" />
-                        </div>
-                    </a>
+
+                    <div>
+                        <a href="https://www.linkedin.com/in/ewan-morrison/" target="blank">
+                            <div className="social-icon-container">
+                                <FaLinkedin className="social-icon" />
+                            </div>
+                        </a>
+                        <a href="https://www.twitter.com/ewanm5" target="blank">
+                            <div className="social-icon-container">
+                                <FaTwitter className="social-icon" />
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/ewanmorrison_" target="blank">
+                            <div className="social-icon-container">
+                                <FaInstagram className="social-icon" />
+                            </div>
+                        </a>
+                        <a href="https://www.github.com/ewan-m" target="blank">
+                            <div className="social-icon-container">
+                                <FaGithub className="social-icon" />
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

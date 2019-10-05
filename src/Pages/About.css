@@ -7,7 +7,7 @@
     align-items: center;
     background-color: var(--gray-darkest);
     cursor: pointer;
-    margin: 0 0.25rem;
+    margin: 0.35rem;
 }
 
 .social-icon-container:hover>.social-icon {
@@ -21,6 +21,18 @@
 .about-panel {
     max-width: 30rem;
     background: #fff;
+    box-shadow: var(--shadow-smallest);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.1rem;
+}
+
+.about-panel h1, .about-panel h2 {
+    margin-bottom: 1.25rem;
+}
+
+.about-panel p {
+    margin-bottom: 1rem;
 }
 
 .centered-flex {
@@ -28,8 +40,14 @@
     justify-content: center;
 }
 
+.slick-description {
+    font-weight: 300;
+    color: var(--gray-lightest);
+}
+
 .profile-image {
-    height: 100%;
-    width: 25%;
+    height: 10rem;
+    width: 10rem;
     border-radius: 50%;
+    box-shadow: var(--shadow-small);
 }
