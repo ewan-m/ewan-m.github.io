@@ -1,23 +1,25 @@
 .menu-item {
-    display: block;
-    color: var(--gray-lightest);
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    color: var(--gray-darkest);
     transition: 0.2s;
     user-select: none;
     cursor: pointer;
 }
 
 .menu-item > svg {
-    margin-bottom: 0.2em;
-    margin-right: 0.5rem;
+    margin-right: 0.35rem;
+    margin-top: 0.25rem;
 }
 
 .menu-item:hover {
-    color: rgba(var(--primary-light), 0.5);
+    color: rgba(var(--primary), 0.5);
     text-decoration: none;
 }
 
 .menu-item.selected {
-    color: rgb(var(--primary-light));
+    color: rgb(var(--primary));
 }
 
 .menu-item > .link-name {

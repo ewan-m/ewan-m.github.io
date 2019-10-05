@@ -11,15 +11,26 @@
 }
 
 .title>.first-word {
-    color: var(--gray-lightest);
+    color: rgb(var(--primary-active));
     font-weight: 700;
 }
 
 .title>.second-word {
-    color: var(--white);
+    color: rgb(var(--primary-active));
     font-weight: 300;
 }
 
 .site-header {
-    background-color: var(--gray-darkest);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.25rem 2rem 0.75rem;
+    user-select: none;
+}
+
+.buttons-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

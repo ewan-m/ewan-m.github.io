@@ -8,7 +8,7 @@ export function TopMenuItem(props: { icon: IconType, name: string }) {
     const Destination = '/' + props.name.replace(' ', '');
 
     return (
-        <NavLink to={Destination} className="mr-2 mr-sm-4 mr-md-5 menu-item" activeClassName="selected">
+        <NavLink to={Destination} className="menu-item" activeClassName="selected">
             <Icon />
             <span className="link-name">
                 {props.name}

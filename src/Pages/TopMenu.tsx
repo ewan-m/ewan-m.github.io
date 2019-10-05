@@ -8,9 +8,9 @@ import {
 } from 'react-icons/fa';
 import { TopMenuItem } from '../UiElements/TopMenuItem';
 
-export function TopMenu() {
+export const TopMenu = () => {
     return (
-        <header className="site-header d-flex flex-row justify-content-between py-1 px-3 px-md-5">
+        <header className="site-header">
             <h1 className="title">
                 <span className="first-word">
                     arX
@@ -19,14 +19,14 @@ export function TopMenu() {
                     plorer
                     </span>
             </h1>
-            <div className="d-flex flex-row align-items-center">
+            <div className="buttons-section">
                 <TopMenuItem name="search" icon={FaSearch} />
                 <TopMenuItem name="favourites" icon={FaHeart} />
                 <TopMenuItem name="about" icon={FaInfoCircle} />
             </div>
-            <div className="d-flex align-items-center">
+            <div className="buttons-section">
                 <button className="btn btn-primary SignUp">
-                    <FaUser /><span className="d-none d-sm-inline ml-1">account</span>
+                    <FaUser />account
                 </button>
             </div>
         </header>
