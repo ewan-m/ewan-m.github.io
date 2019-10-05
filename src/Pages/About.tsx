@@ -3,9 +3,9 @@ import './About.css';
 import Me from '../Assets/profile.jpg';
 import { FaLinkedin, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 
-function About() {
+export const About = () => {
     return (
-        <div className="d-flex justify-content-center">
+        <div className="centered-flex">
             <div className="about-panel p-3 shadow">
                 <h1 className="mb-3">
                     what is all this then?
@@ -25,28 +25,27 @@ function About() {
                 <h2 className="text-right">
                     -ewan morrison
                 </h2>
-                <hr></hr>
-                <div className="d-flex justify-content-center">
-                    <img alt="my face" src={Me} className="rounded-circle h-100 w-25 mb-2 shadow-sm"></img>
+                <div className="centered-flex">
+                    <img alt="my face" src={Me} className="profile-image"></img>
                 </div>
-                <div className="d-flex flex-row justify-content-center">
+                <div className="centered-flex">
                     <a href="https://www.linkedin.com/in/ewan-morrison/" target="blank">
-                        <div className="social-icon-container shadow-sm mr-1">
+                        <div className="social-icon-container">
                             <FaLinkedin className="social-icon" />
                         </div>
                     </a>
                     <a href="https://www.twitter.com/ewanm5" target="blank">
-                        <div className="social-icon-container shadow-sm mr-1">
+                        <div className="social-icon-container">
                             <FaTwitter className="social-icon" />
                         </div>
                     </a>
                     <a href="https://www.instagram.com/ewanmorrison_" target="blank">
-                        <div className="social-icon-container shadow-sm mr-1">
+                        <div className="social-icon-container">
                             <FaInstagram className="social-icon" />
                         </div>
                     </a>
                     <a href="https://www.github.com/ewan-m" target="blank">
-                        <div className="social-icon-container shadow-sm">
+                        <div className="social-icon-container">
                             <FaGithub className="social-icon" />
                         </div>
                     </a>
@@ -55,5 +54,3 @@ function About() {
         </div>
     );
 }
-
-export default About;

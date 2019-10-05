@@ -8,15 +8,20 @@
     --gray-lightest: #eee;
     --gray-light: #ccc;
     --gray-darkest: #282c34;
+    --shadow-small: rgba(0, 0, 0, 0.1) -1px 2px 5px 2px;
 }
 
 .app {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-container {
     height: 100vh;
+    width: 100%;
     overflow-y: auto;
+    background: linear-gradient(180deg, rgba(var(--primary-light), 0.1), rgba(var(--primary-light), 0.5));
 }
 
 h1 {
@@ -25,6 +30,7 @@ h1 {
 
 a {
     color: rgb(var(--primary));
+    text-decoration: none;
 }
 
 a:hover {
@@ -35,10 +41,13 @@ a:hover {
     font-weight: 600;
     border-radius: 0.5rem;
     border: none;
+    padding: 0.6rem 0.7rem 0.5rem;
+    cursor: pointer;
+    display: flex;
 }
 
 .btn>svg {
-    margin-bottom: 0.2em;
+    margin-right: 0.35rem;
 }
 
 .btn-primary {
