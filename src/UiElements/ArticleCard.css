@@ -1,12 +1,35 @@
 .grayscale-image {
-    filter: grayscale(100%);
 }
 
 .cursor-pointer {
     cursor: pointer;
 }
 
+.article-card-container {
+    background: #fff;
+    box-shadow: var(--shadow-small);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.image-category-section {
+    widows: 100%;
+    position: relative;
+}
+
+.image-category-section > img {
+    width: 50%;
+    filter: grayscale(100%);
+}
+
 .colour-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -27,10 +50,6 @@
 .icons svg {
     color: var(--gray-darkest);
     cursor: pointer;
-}
-
-.border-radius-bottom {
-    border-radius: 0 0 2rem 2rem;
 }
 
 .ph, .gr-qc, .physics, .math {

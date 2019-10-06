@@ -26,31 +26,31 @@ export function ArticleCard(props: { id: number, article: Article }) {
     }
 
     return (
-        <div className="shadow animate-in h-100 border-radius-bottom d-flex flex-column justify-content-between" style={style}>
-            <div className="w-100 position-relative">
-                <img alt="category" className="grayscale-image" src={articleImage} width="50%" />
-                <div className={"d-flex flex-column align-items-center justify-content-center colour-overlay " + colourOverlayClass}>
+        <div className="article-card-container animate-in" style={style}>
+            <div className="image-category-section">
+                <img alt="category" src={articleImage} />
+                <div className={"colour-overlay " + colourOverlayClass}>
                     <label className="category-label">
                         {props.article.primaryCategory}
                     </label>
                 </div>
             </div>
-            <div className="text-center p-2">
+            <div className="author-title-section">
                 <label title={authors} className="text-muted text-uppercase w-100 text-truncate">
                     {authors}
                 </label>
-                <h2 className="h6">
+                <h2>
                     {props.article.title}
                 </h2>
             </div>
-            <div className={"border-radius-bottom px-3 d-flex flex-row justify-content-between icons " + colourOverlayClass}>
-                <button className="btn p-3">
+            <div className={"buttons-section " + colourOverlayClass}>
+                <button className="button p-3">
                     <FaHeart />
                 </button>
-                <button className="btn p-3">
+                <button className="button p-3">
                     <FaAlignJustify />
                 </button>
-                <a className="btn p-3" href={props.article.pdfHref}>
+                <a className="button p-3" href={props.article.pdfHref}>
                     <FaExternalLinkAlt />
                 </a>
             </div>

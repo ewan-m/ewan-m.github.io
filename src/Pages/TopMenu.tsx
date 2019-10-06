@@ -25,7 +25,7 @@ export const TopMenu = () => {
                 <TopMenuItem name="about" icon={FaInfoCircle} />
             </div>
             <div className="buttons-section">
-                <button className="btn btn-primary SignUp">
+                <button className="button button-primary SignUp">
                     <FaUser />account
                 </button>
             </div>
