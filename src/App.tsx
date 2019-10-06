@@ -1,4 +1,5 @@
 import React from 'react';
+import './GlobalStyles/GlobalStyles';
 import './App.css';
 import { TopMenu } from './Pages/TopMenu';
 import { BrowserRouter as Router, Route } from "react-router-dom";

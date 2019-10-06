@@ -1,0 +1,13 @@
+:root {
+    --primary: 4, 147, 186;
+    --primary-active: 3, 107, 135;
+    --primary-light: 97, 218, 251;
+    --secondary: 190, 97, 251;
+    --tertiary: 251, 144, 97;
+    --white: #fff;
+    --gray-lightest: #eee;
+    --gray-light: #ccc;
+    --gray-darkest: #434f68;
+    --shadow-small: rgba(0, 0, 0, 0.1) -1px 1px 4px 2px;
+    --shadow-smallest: rgba(0, 0, 0, 0.1) -1px 1px 3px 1px;
+}

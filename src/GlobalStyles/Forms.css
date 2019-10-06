@@ -1,0 +1,14 @@
+.input-inline {
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray-lightest);
+    padding: 0.6rem 0.7rem 0.5rem;
+}
+
+.input-inline::placeholder {
+    font-weight: 300;
+}
+
+.input-inline:focus {
+    outline: none;
+    box-shadow: var(--shadow-smallest);
+}
