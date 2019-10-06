@@ -1,0 +1,17 @@
+.articles-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 568px) {
+    .articles-grid {
+        grid-template-columns: auto auto;
+    }
+}
