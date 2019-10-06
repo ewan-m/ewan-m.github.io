@@ -1,17 +1,27 @@
-.articles-grid {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 1rem;
+.inner-page-padding {
+    padding: 1rem;
 }
 
-@media (max-width: 768px) {
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - 0.75rem));
+    gap: 2rem 1rem;
+}
+
+.loading-not-found-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 1000px) {
     .articles-grid {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3, calc(33% - 0.5rem))
     }
 }
 
 @media (max-width: 568px) {
     .articles-grid {
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, calc(50% - 0.5rem));
     }
 }

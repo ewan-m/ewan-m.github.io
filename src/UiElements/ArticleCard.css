@@ -42,17 +42,30 @@
 }
 
 .author-title-section {
-
+    padding: 0.75rem 0.5rem 1.5rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
 }
 
 .author-title-section > label {
-    max-width: 0;
+    font-size: 0.8rem;
+    display: inline-block;
+    width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .author-title-section > h2 {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    white-space: normal;
+}
+
+.buttons-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .icons svg {
@@ -61,11 +74,11 @@
 }
 
 .ph, .gr-qc, .physics, .math {
-    background-color: rgba(var(--primary), 0.5);
+    background-color: rgba(var(--primary-light), 0.1);
 }
 .bio, .stat, .econ, .fin {
-    background-color: rgba(var(--secondary), 0.5);
+    background-color: rgba(var(--secondary), 0.1);
 }
 .cs, .eess {
-    background-color: rgba(var(--tertiary), 0.5);
+    background-color: rgba(var(--tertiary), 0.1);
 }

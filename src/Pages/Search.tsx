@@ -47,7 +47,7 @@ export default class Search extends React.PureComponent {
 
     render() {
         return (
-            <div>
+            <div className="inner-page-padding">
                 <SearchBox parent={this}/>
                 {this.state.articles !== null
                     ?
@@ -61,11 +61,11 @@ export default class Search extends React.PureComponent {
                         }
                     </div>
                     :
-                    <div className="d-flex justify-content-center mt-5">
+                    <div className="loading-not-found-container">
                         {
                             this.state.isLoaded
                                 ? <p>No results found</p>
-                                : <span className="animate-spin"><Loading /></span>
+                                : <Loading />
                         }
                     </div>
                 }
