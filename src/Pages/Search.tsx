@@ -51,10 +51,10 @@ export default class Search extends React.PureComponent {
                 <SearchBox parent={this}/>
                 {this.state.articles !== null
                     ?
-                    <div className="row">
+                    <div className="articles-grid">
                         {
                             this.state.articles.map((article, index: number) =>
-                                <div className="mb-5 col-lg-3 col-md-4 col-sm-6 col-12">
+                                <div className="article">
                                     <ArticleCard key={index} id={index} article={article} />
                                 </div>
                             )
