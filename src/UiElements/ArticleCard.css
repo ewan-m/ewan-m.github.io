@@ -1,10 +1,3 @@
-.grayscale-image {
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-
 .article-card-container {
     background: #fff;
     box-shadow: var(--shadow-small);
@@ -22,6 +15,7 @@
 
 .image-category-section > img {
     width: 50%;
+    height: 100%;
     filter: grayscale(100%);
 }
 
@@ -45,6 +39,20 @@
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--gray-darkest);
+}
+
+.author-title-section {
+
+}
+
+.author-title-section > label {
+    max-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.author-title-section > h2 {
+    font-size: 1.25rem;
 }
 
 .icons svg {
