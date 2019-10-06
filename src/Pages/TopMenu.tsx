@@ -3,7 +3,6 @@ import './TopMenu.css';
 import {
     FaInfoCircle,
     FaSearch,
-    FaUser,
     FaHeart
 } from 'react-icons/fa';
 import { TopMenuItem } from '../UiElements/TopMenuItem';
@@ -23,11 +22,6 @@ export const TopMenu = () => {
                 <TopMenuItem name="search" icon={FaSearch} />
                 <TopMenuItem name="favourites" icon={FaHeart} />
                 <TopMenuItem name="about" icon={FaInfoCircle} />
-            </div>
-            <div className="buttons-section">
-                <button className="button button-primary SignUp">
-                    <FaUser />account
-                </button>
             </div>
         </header>
     );

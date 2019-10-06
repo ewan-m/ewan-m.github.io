@@ -10,6 +10,10 @@
     background: transparent;
 }
 
+.button:focus {
+    outline: none;
+}
+
 .button.button-primary > svg {
     margin-right: 0.35rem;
 }
