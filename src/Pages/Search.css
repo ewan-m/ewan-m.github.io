@@ -4,8 +4,8 @@
 
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(4, calc(25% - 0.75rem));
-    gap: 2rem 1rem;
+    grid-template-columns: repeat(4, calc(25% - 1.5rem));
+    gap: 3rem 2rem;
     padding: 1rem 0;
 }
 
@@ -17,12 +17,12 @@
 
 @media (max-width: 1000px) {
     .articles-grid {
-        grid-template-columns: repeat(3, calc(33% - 0.5rem))
+        grid-template-columns: repeat(3, calc(33% - 1.25rem))
     }
 }
 
 @media (max-width: 568px) {
     .articles-grid {
-        grid-template-columns: repeat(2, calc(50% - 0.5rem));
+        grid-template-columns: repeat(2, calc(50% - 1rem));
     }
 }

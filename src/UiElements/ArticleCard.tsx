@@ -36,12 +36,12 @@ export function ArticleCard(props: { id: number, article: Article }) {
                 </div>
             </div>
             <div className="author-title-section">
-                <label title={authors} className="text-muted text-uppercase w-100 text-truncate">
-                    {authors}
-                </label>
                 <h2>
                     {props.article.title}
                 </h2>
+                <label title={authors}>
+                    {authors}
+                </label>
             </div>
             <div className={"buttons-section " + colourOverlayClass}>
                 <button className="button p-3">

@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     margin-top: 0.25rem;
+    padding: 0 0.5rem;
     overflow: auto;
 }
 
@@ -34,8 +35,4 @@
 .recent-search-pill > .trigger-search:hover {
     border-bottom: 1px solid var(--gray-darkest);
     cursor: pointer;
-}
-
-.search-box {
-    width: calc(70% - 300px);
 }

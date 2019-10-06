@@ -43,7 +43,7 @@ export class SearchBox extends React.PureComponent<Parent> {
 
     render() {
         return (
-            <div className="">
+            <div>
                 <form>
                     <select className="input-inline">
                         <option value="all">All fields</option>
@@ -65,7 +65,7 @@ export class SearchBox extends React.PureComponent<Parent> {
                     <input
                         placeholder="Search"
                         aria-label="Search for articles"
-                        className="input-inline search-box"
+                        className="input-inline"
                         onChange={(event: any) => this.onSearchKeyUp(event.target.value)}
                     />
                 </form>

@@ -37,10 +37,10 @@
 .colour-overlay > .category-label {
     background-color: var(--white);
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--gray-darkest);
+    font-weight: 300;
+    opacity: 0.95;
 }
 
 .author-title-section {
@@ -48,6 +48,7 @@
     display: flex;
     height: 100%;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .author-title-section > label {
@@ -62,6 +63,8 @@
 .author-title-section > h2 {
     font-size: 1rem;
     white-space: normal;
+    margin-bottom: 1rem;
+    font-weight: 550;
 }
 
 .buttons-section {
