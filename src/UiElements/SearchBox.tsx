@@ -44,7 +44,7 @@ export class SearchBox extends React.PureComponent<Parent> {
     render() {
         return (
             <div>
-                <form>
+                <form className="searching-form">
                     <select className="input-inline">
                         <option value="all">All fields</option>
                         <option value="title">Title</option>

@@ -21,7 +21,7 @@
     }
 }
 
-@media (max-width: 568px) {
+@media (max-width: 750px) {
     .articles-grid {
         grid-template-columns: repeat(2, calc(50% - 1rem));
     }
