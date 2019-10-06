@@ -43,7 +43,7 @@ export class SearchBox extends React.PureComponent<Parent> {
 
     render() {
         return (
-            <div className="mb-3">
+            <div className="">
                 <form>
                     <select className="input-inline">
                         <option value="all">All fields</option>
@@ -69,20 +69,20 @@ export class SearchBox extends React.PureComponent<Parent> {
                         onChange={(event: any) => this.onSearchKeyUp(event.target.value)}
                     />
                 </form>
-                <div className="d-flex flex-row align-items-center mt-2 overflow-auto">
-                    <label className="text-muted m-0" style={{ whiteSpace: 'nowrap' }}>
+                <div className="recent-searches-row">
+                    <label className="recent-searches-label" style={{ whiteSpace: 'nowrap' }}>
                         recent searches:
                     </label>
                     {this.state.recentSearches.length > 0
                         ? this.state.recentSearches.map((search, index) =>
-                            <span key={index} className="recent-search-pill">
-                                <span>
+                            <label key={index} className="recent-search-pill" onClick={e => this.removeSearch(index)}>
+                                <span onClick={e => this.onSearchKeyUp(search)} className="trigger-search">
                                     {search}
                                 </span>
-                                <span onClick={e => this.removeSearch(index)} role="button" className="ml-2 cursor-pointer">
+                                <span role="button" className="delete-search">
                                     <FaTimesCircle />
                                 </span>
-                            </span>
+                            </label>
                         ) : ''
                     }
                 </div>

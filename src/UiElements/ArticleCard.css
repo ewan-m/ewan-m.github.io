@@ -16,7 +16,9 @@
 .image-category-section > img {
     width: 50%;
     height: 100%;
-    filter: grayscale(100%);
+    filter: grayscale(70%);
+    opacity: 0.8;
+    border-radius: 50%;
 }
 
 .colour-overlay {

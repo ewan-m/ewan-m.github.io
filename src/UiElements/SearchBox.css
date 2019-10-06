@@ -1,9 +1,39 @@
+.recent-searches-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.25rem;
+    overflow: auto;
+}
+
 .recent-search-pill {
-    background-color: rgb(var(--secondary));
-    padding:  0 0.75rem;
     font-weight: 600;
-    color: var(--white);
     white-space: nowrap;
+    margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--gray-darkest);
+}
+
+.recent-searches-label {
+    border-bottom: 1px solid transparent;
+}
+
+.recent-search-pill > .delete-search {
+    font-size: 0.6rem;
+    margin-left: 0.1rem;
+    cursor: pointer;
+}
+
+.recent-search-pill > .trigger-search {
+    transition: 0.25s border-bottom;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+
+.recent-search-pill > .trigger-search:hover {
+    border-bottom: 1px solid var(--gray-darkest);
+    cursor: pointer;
 }
 
 .search-box {
