@@ -13,10 +13,10 @@ export const TopMenu = () => {
             <h1 className="title">
                 <span className="first-word">
                     arX
-                    </span>
+                </span>
                 <span className="second-word">
                     plorer
-                    </span>
+                </span>
             </h1>
             <div className="buttons-section">
                 <TopMenuItem name="search" icon={FaSearch} />
