@@ -28,6 +28,7 @@ form.searching-form > input {
 
 .recent-searches-label {
     border-bottom: 1px solid transparent;
+    white-space: nowrap;
 }
 
 .recent-search-pill > .delete-search {

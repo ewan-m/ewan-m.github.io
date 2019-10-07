@@ -69,12 +69,13 @@ export class SearchBox extends React.PureComponent<Parent> {
                         onChange={(event: any) => this.onSearchKeyUp(event.target.value)}
                     />
                 </form>
-                <div className="recent-searches-row">
-                    <label className="recent-searches-label" style={{ whiteSpace: 'nowrap' }}>
-                        recent searches:
-                    </label>
-                    {this.state.recentSearches.length > 0
-                        ? this.state.recentSearches.map((search, index) =>
+                {this.state.recentSearches.length > 0
+                    &&
+                    <div className="recent-searches-row">
+                        <label className="recent-searches-label">
+                            recent searches:
+                        </label>
+                        {this.state.recentSearches.map((search, index) =>
                             <label key={index} className="recent-search-pill" onClick={e => this.removeSearch(index)}>
                                 <span onClick={e => this.onSearchKeyUp(search)} className="trigger-search">
                                     {search}
@@ -83,9 +84,9 @@ export class SearchBox extends React.PureComponent<Parent> {
                                     <FaTimesCircle />
                                 </span>
                             </label>
-                        ) : ''
-                    }
-                </div>
+                        )}
+                    </div>
+                }
             </div>
         );
     }
