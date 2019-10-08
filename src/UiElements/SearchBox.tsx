@@ -45,22 +45,15 @@ export class SearchBox extends React.PureComponent<Parent> {
         return (
             <div>
                 <form className="searching-form">
-                    <select className="input-inline">
+                    <select className="input-inline" onChange={(e) => this.props.parent.setSelectedQuery(e.target.value)}>
                         <option value="all">All fields</option>
-                        <option value="title">Title</option>
-                        <option value="author">Author</option>
-                        <option value="abstract">Abstract</option>
-                        <option value="comments">Comments</option>
-                        <option value="journal_ref">Journal reference</option>
-                        <option value="acm_class">ACM classification</option>
-                        <option value="msc_class">MSC classification</option>
-                        <option value="report_num">Report number</option>
-                        <option value="paper_id">arXiv identifier</option>
-                        <option value="doi">DOI</option>
-                        <option value="orcid">ORCID</option>
-                        <option value="author_id">arXiv author ID</option>
-                        <option value="help">Help pages</option>
-                        <option value="full_text">Full text</option>
+                        <option value="ti">Title</option>
+                        <option value="au">Author</option>
+                        <option value="abs">Abstract</option>
+                        <option value="co">Comments</option>
+                        <option value="jr">Journal reference</option>
+                        <option value="rn">Report number</option>
+                        <option value="cat">Category</option>
                     </select>
                     <input
                         placeholder="Search"

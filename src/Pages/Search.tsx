@@ -1,15 +1,15 @@
 import React from 'react';
-import './Search.css';
 import { ArticleCard } from '../UiElements/ArticleCard';
 import { SearchBox } from '../UiElements/SearchBox';
-import { parseArxivXml } from '../ApiCommunicationHelpers/parseArxivXml';
-import { Article } from '../ApiCommunicationHelpers/interfaces/Article';
+import { parseArxivXml } from '../Helpers/parseArxivXml';
+import { Article } from '../Helpers/interfaces/Article';
 import { Loading } from '../UiElements/Loading';
 import { Pagination } from '../UiElements/Pagination';
 
-export default class Search extends React.PureComponent {
+export class Search extends React.PureComponent {
     timeout: NodeJS.Timeout | null;
     state: { isLoaded: boolean, articles: Array<Article> | null };
+    private selectedQuery = 'all';
 
     constructor(props: any) {
         super(props);
@@ -20,13 +20,18 @@ export default class Search extends React.PureComponent {
         };
     }
 
+    setSelectedQuery(value: string) {
+        this.selectedQuery = value;
+    }
 
     getArticlesMatching(searchValue: string) {
         this.setState({
             isLoaded: false,
             articles: null
         });
-        fetch("https://export.arxiv.org/api/query?search_query=all:" + searchValue)
+
+        const queryParams = `${this.selectedQuery}:%22${searchValue.split(' ').join('+')}%22`;
+        fetch(`https://export.arxiv.org/api/query?search_query=${queryParams}`)
             .then(res => res.text())
             .then(
                 (result) => {
@@ -54,8 +59,8 @@ export default class Search extends React.PureComponent {
                     <div className="articles-grid">
                         {
                             this.state.articles.map((article, index: number) =>
-                                <div className="article">
-                                    <ArticleCard key={index} id={index} article={article} />
+                                <div className="article" key={index}>
+                                    <ArticleCard id={index} article={article} />
                                 </div>
                             )
                         }

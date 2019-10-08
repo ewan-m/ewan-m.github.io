@@ -71,6 +71,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding-bottom: 0.1rem;
 }
 
 .icons svg {
@@ -86,4 +87,9 @@
 }
 .cs, .eess {
     background-color: rgba(var(--tertiary), 0.1);
+}
+
+.button.fav {
+    transition: color 0.25s;
+    color: rgb(var(--tertiary));
 }

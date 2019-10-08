@@ -1,0 +1,72 @@
+.darken-background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    background: rgba(0, 0, 0, 0.8);
+    animation: appear 0.5s ease-in-out;
+}
+
+.inner-modal {
+    max-width: 70ch;
+    background: #fff;
+    box-shadow: var(--shadow-small);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    animation: dropin 0.5s ease-in-out;
+}
+
+.inner-modal label {
+    font-size: 80%;
+}
+
+.inner-modal > .author {
+    text-align: right;
+    width: 100%;
+    margin-top: 1rem;
+    display: block;
+}
+
+.inner-modal > .margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.inner-modal > .even-spaced-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inner-modal > .even-spaced-row .modal-close {
+    cursor: pointer;
+}
+
+.inner-modal .margin-right {
+    margin-right: 1rem;
+}
+
+@keyframes appear {
+    from {
+        background: rgba(0, 0, 0, 0.0);
+    }
+    to {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes dropin {
+    from {
+        transform: translateY(-6rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
