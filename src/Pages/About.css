@@ -25,14 +25,9 @@
     margin: 1rem;
     padding: 1rem;
     border-radius: 0.25rem;
-}
-
-.about-panel h1, .about-panel h2 {
-    margin-bottom: 1.25rem;
-}
-
-.about-panel p {
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .centered-flex {
@@ -40,9 +35,16 @@
     justify-content: center;
 }
 
-.slick-description {
-    font-weight: 300;
-    color: var(--gray-lightest);
+.ewan {
+    font-size: 1.5rem;
+    color: rgb(var(--primary));
+    margin-top: 1rem;
+}
+
+.job-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 .profile-image {
