@@ -11,12 +11,7 @@ export const TopMenu = () => {
     return (
         <header className="site-header">
             <h1 className="title">
-                <span className="first-word">
-                    
-                </span>
-                <span className="second-word">
-                    arx
-                </span>
+                arXiv
             </h1>
             <div className="buttons-section">
                 <TopMenuItem name="search" icon={FaSearch} />
