@@ -20,6 +20,8 @@ export class Search extends React.PureComponent {
         };
     }
 
+    componentDidMount = () => this.getArticlesMatching("random");
+
     setSelectedQuery(value: string) {
         this.selectedQuery = value;
     }
@@ -53,7 +55,7 @@ export class Search extends React.PureComponent {
     render() {
         return (
             <div className="inner-page-padding">
-                <SearchBox parent={this}/>
+                <SearchBox parent={this} />
                 {this.state.articles !== null
                     ?
                     <div className="articles-grid">
