@@ -12,10 +12,10 @@ export const TopMenu = () => {
         <header className="site-header">
             <h1 className="title">
                 <span className="first-word">
-                    arX
+                    
                 </span>
                 <span className="second-word">
-                    plorer
+                    arx
                 </span>
             </h1>
             <div className="buttons-section">
