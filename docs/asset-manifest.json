@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/arxplorer/static/css/main.aaaa366d.chunk.css",
-    "main.js": "/arxplorer/static/js/main.3b4aea0f.chunk.js",
-    "main.js.map": "/arxplorer/static/js/main.3b4aea0f.chunk.js.map",
+    "main.js": "/arxplorer/static/js/main.7077d292.chunk.js",
+    "main.js.map": "/arxplorer/static/js/main.7077d292.chunk.js.map",
     "runtime~main.js": "/arxplorer/static/js/runtime~main.3fe26b41.js",
     "runtime~main.js.map": "/arxplorer/static/js/runtime~main.3fe26b41.js.map",
     "static/js/2.abe6c1ac.chunk.js": "/arxplorer/static/js/2.abe6c1ac.chunk.js",
     "static/js/2.abe6c1ac.chunk.js.map": "/arxplorer/static/js/2.abe6c1ac.chunk.js.map",
     "index.html": "/arxplorer/index.html",
-    "precache-manifest.400b81e8f0fe0969f902b0e536d69c76.js": "/arxplorer/precache-manifest.400b81e8f0fe0969f902b0e536d69c76.js",
+    "precache-manifest.daba07afef7c66f43b3274767aab278b.js": "/arxplorer/precache-manifest.daba07afef7c66f43b3274767aab278b.js",
     "service-worker.js": "/arxplorer/service-worker.js",
     "static/css/main.aaaa366d.chunk.css.map": "/arxplorer/static/css/main.aaaa366d.chunk.css.map",
     "static/media/index.css": "/arxplorer/static/media/MontserratAlternates-ThinItalic.feab7877.woff",

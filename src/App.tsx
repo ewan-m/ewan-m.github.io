@@ -9,7 +9,7 @@ import { Favourites } from './Pages/Favourites';
 
 export function App(): React.ReactElement {
     return (
-        <Router>
+        <Router basename="arxplorer">
             <div className="app">
                 <TopMenu />
                 <div className="page-container">
