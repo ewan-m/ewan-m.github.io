@@ -1,7 +1,7 @@
 {
     "name": "arXplorer",
     "version": "0.1.0",
-    "homepage": "https://ewan-m.github.io",
+    "homepage": "/arxplorer",
     "private": true,
     "dependencies": {
         "@types/jest": "^24.0.17",
