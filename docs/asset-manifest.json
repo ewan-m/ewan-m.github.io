@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.51604442.chunk.css",
+    "main.js": "/static/js/main.3b4aea0f.chunk.js",
+    "main.js.map": "/static/js/main.3b4aea0f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.abe6c1ac.chunk.js": "/static/js/2.abe6c1ac.chunk.js",
+    "static/js/2.abe6c1ac.chunk.js.map": "/static/js/2.abe6c1ac.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1ae4216b409eca5cd949473f73a84a17.js": "/precache-manifest.1ae4216b409eca5cd949473f73a84a17.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.51604442.chunk.css.map": "/static/css/main.51604442.chunk.css.map",
+    "static/media/index.css": "/static/media/MontserratAlternates-ThinItalic.feab7877.woff",
+    "static/media/biology.jpg": "/static/media/biology.c5627250.jpg",
+    "static/media/computerscience.jpg": "/static/media/computerscience.a58b43f0.jpg",
+    "static/media/economics.jpg": "/static/media/economics.134e8343.jpg",
+    "static/media/electricalengineering.jpg": "/static/media/electricalengineering.04424be5.jpg",
+    "static/media/finance.jpg": "/static/media/finance.1d97ddf2.jpg",
+    "static/media/generic.png": "/static/media/generic.80ef1cf8.png",
+    "static/media/mathematics.jpg": "/static/media/mathematics.1cbed547.jpg",
+    "static/media/physics.jpg": "/static/media/physics.dddb8825.jpg",
+    "static/media/profile.jpg": "/static/media/profile.6cb7a123.jpg",
+    "static/media/statistics.jpg": "/static/media/statistics.34157f1d.jpg"
+  }
+}
